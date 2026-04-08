@@ -1,19 +1,12 @@
-import java.util.*;
-
 public class Main {
     public static void main(String[] args) {
-        Zoo<Animal> zoo = new Zoo<>();
+        Library lib = new Library();
 
-        List<Lion> source = new ArrayList<>();
-        source.add(new Lion("Arslan"));
-        source.add(new Lion("Togoruu"));
+        lib.addBook(new Book("Svvn zam", 2020));
+        lib.addBook(new Book("Huuchin dewter", 1995));
 
-        List<Animal> destination = new ArrayList<>();
-
-        zoo.transferAnimals(source, destination);
-
-        for (Animal a : destination) {
-            System.out.println(a);
+        for (Book b : lib.getBooksAfterYear(2000)) {
+            System.out.println(b.title + ": " + b.year);
         }
     }
 }
